@@ -6,7 +6,6 @@ const Intro = () => {
       <h1 className='text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8'>
         <Link href='/'>No Hedge</Link>
       </h1>
-      {/* ここにナビゲーションバーを埋め込む */}
     </section>
   )
 }
