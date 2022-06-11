@@ -1,4 +1,3 @@
-import Avatar from './avatar'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
@@ -13,14 +12,7 @@ type Props = {
   slug: string
 }
 
-const PostPreview = ({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  slug,
-}: Props) => {
+const PostPreview = ({ title, coverImage, date, excerpt, slug }: Props) => {
   return (
     <div>
       <div className='mb-5'>
