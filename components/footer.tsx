@@ -3,7 +3,7 @@ import Container from './container'
 const Footer = () => {
   return (
     <footer>
-      <Container>This is footer.</Container>
+      <Container>&copy; 2022 No Hedge. All rights reserved.</Container>
     </footer>
   )
 }
