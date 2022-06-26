@@ -12,7 +12,7 @@ type Props = {
 
 const PostPreview = ({ title, coverImage, date, excerpt, slug }: Props) => {
   return (
-    <div className='rounded-lg bg-gray-800 hover:bg-gray-700'>
+    <div className='rounded-lg text-white bg-cardgray hover:bg-hover-cardgray'>
       <h3 className='text-3xl mb-3 leading-snug'>
         <Link as={`/posts/${slug}`} href='/posts/[slug]'>
           <a className='block flex h-full flex-col justify-between px-6 py-4'>
