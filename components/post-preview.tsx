@@ -12,10 +12,12 @@ type Props = {
 
 const PostPreview = ({ title, coverImage, date, excerpt, slug }: Props) => {
   return (
-    <div>
+    <div className='rounded-lg bg-gray-800 hover:bg-gray-700'>
       <h3 className='text-3xl mb-3 leading-snug'>
         <Link as={`/posts/${slug}`} href='/posts/[slug]'>
-          <a className='hover:underline'>{title}</a>
+          <a className='block flex h-full flex-col justify-between px-6 py-4'>
+            {title} <br /> <DateFormatter dateString={date} />
+          </a>
         </Link>
       </h3>
       {/* 以下、テンプレートで生成された箇所 */}
