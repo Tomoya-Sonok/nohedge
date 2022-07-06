@@ -15,8 +15,8 @@ const PostPreview = ({ title, coverImage, date, excerpt, slug }: Props) => {
     <div className='rounded-lg text-white bg-cardgray hover:bg-hover-cardgray'>
       <h3 className='leading-snug'>
         <Link as={`/posts/${slug}`} href='/posts/[slug]'>
-          <a className='block flex h-full flex-col justify-between px-8 py-6'>
-            <p className='text-3xl mb-4'>{title} </p>
+          <a className='block flex h-full flex-col justify-between px-6 py-4 md:px-8 md:py-6'>
+            <p className='text-2xl md:text-3xl font-bold mb-4'>{title} </p>
             <p className='mb-4'>{excerpt}</p>
             <p className='text-right text-fontgray'>
               <DateFormatter dateString={date} />
