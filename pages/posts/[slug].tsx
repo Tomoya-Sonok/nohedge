@@ -30,7 +30,7 @@ const Post = ({ post, preview }: Props) => {
           <>
             <article className='mb-32 text-white'>
               <Head>
-                <title>{post.title}</title>
+                <title>{post.title} | No Hedge</title>
               </Head>
               <PostHeader
                 title={post.title}
