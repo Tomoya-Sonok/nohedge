@@ -5,7 +5,8 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      primary: '#111827',
+      // primary: '#111827',
+      primary: '#282c35',
       cardgray: '#1F2937',
       fontgray: '#9ca3af',
       'hover-cardgray': '#374151',
@@ -13,5 +14,5 @@ module.exports = {
       'primary-text': '#818CF8',
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

@@ -1,3 +1,4 @@
+// import { convertToReact } from '../lib'
 import markdownStyles from './markdown-styles.module.css'
 
 type Props = {
@@ -16,3 +17,22 @@ const PostBody = ({ content }: Props) => {
 }
 
 export default PostBody
+
+// import { convertToReact } from '@/lib'
+// import style from '@/styles/markdown-styles.module.scss'
+
+// type Props = {
+//   initialContent: string
+// }
+
+// const PostBody: React.VFC<Props> = ({ content }) => {
+//   return (
+//     <div className="space-y-4">
+//       <div className={style['markdown']}>{convertToReact(content)}</div>
+
+//       <p className="text-gray-300">Happy Coding 🎉</p>
+//     </div>
+//   )
+// }
+
+// export default PostBody

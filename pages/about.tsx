@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
+import Image from 'next/image'
 import Container from '../components/container'
 import PostBody from '../components/post-body'
 import PostHeader from '../components/post-header'
@@ -23,12 +24,15 @@ const Post = ({ post, preview }: Props) => {
     <Layout preview={preview}>
       <Container>
         <>
-          <article className='mb-32 text-white'>
+          <div className='mb-32 text-white'>
             <Head>
               <title>Profile | No Hedge</title>
             </Head>
-            <h1>Hello Profile page</h1>
-          </article>
+            <h1>Hello World!</h1>
+            <hr />
+            <Image src='/assets/profile/me.jpg' width={300} height={300} />
+            <hr />
+          </div>
         </>
       </Container>
     </Layout>

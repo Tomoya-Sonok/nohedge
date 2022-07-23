@@ -1,13 +1,155 @@
 ---
-title: 'これは1つ目の投稿です'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilis...'
+title: 'Callback関数とは'
+excerpt: 'callback関数とは、関数Aの引数としてさらに関数Bを入れると、入れられた関数Bはcallback関数という扱いになり、関数Aの処理の中の好きなタイミングで実行させることができるというものである...'
 date: '2020-03-18'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+`callback関数`とは、`関数A`の引数としてさらに`関数B`を入れると、入れられた`関数B`は`callback関数`という扱いになり、`関数A`の処理の中の好きなタイミングで実行させることができるというものである。
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+文章で書いても理解しにくいので、実際にコードを書いてみる。
 
-## Lorem Ipsum
+例えば、1 から 5 を順に出力する次のような関数があったとする。
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+```js
+function countUp() {
+  console.log(1)
+  console.log(2)
+  console.log(3)
+  console.log(4)
+  console.log(5)
+}
+
+countUp()
+
+// 出力
+// 1
+// 2
+// 3
+// 4
+// 5
+```
+
+次に、`console.log(2)`を`setTimeout()`で 2 秒後に出力するよう以下のように編集。
+
+```js
+function countUp() {
+  console.log(1)
+  setTimeout(function () {
+    console.log(2)
+  }, 2000)
+  //setTimeout()は第2引数で
+  // 受け取った時間が過ぎた後に中の処理を実行する
+  console.log(3)
+  console.log(4)
+  console.log(5)
+}
+
+countUp()
+
+// 出力
+// 1
+// 3
+// 4
+// 5
+// 2 （2秒後に出力）
+```
+
+一般的にプログラムは上から順番に処理が実行されるが、このように「**3〜5 を出力する処理は、2 を出力する`setTimeout()`の処理を待ってはくれない**」
+
+そこで登場するのが、**callback**という考え方である。
+
+```js
+// with callback
+console.log(1)
+
+function first(callback) {
+  setTimeout(function () {
+    console.log(2)
+    callback()
+  }, 2000)
+}
+
+function second() {
+  console.log(3)
+  console.log(4)
+  console.log(5)
+}
+
+first(second)
+
+// 出力
+// 1
+// 2 （2秒後に出力）
+// 3 （2秒後に出力）
+// 4 （2秒後に出力）
+// 5 （2秒後に出力）
+```
+
+**callback**をこのように使えば、1 が出力されて 2 秒後にようやく 2 が出力され、そのあとに 3 から 5 が出力される。1 から 5 まで順番に出力できるようになるのだ。
+
+同じコードを見ながら、中で何が起きているのか順番に追ってみる。
+
+```js
+// with callback
+console.log(1) // ① まず1が出力される
+
+function first(callback) {
+  // ③ 関数の引数として渡されたsecond()はcallback関数となる
+  setTimeout(function () {
+    console.log(2) // ④ first()が実行され、2秒後に2を出力
+    callback() // ⑤ second()を実行
+  }, 2000)
+}
+
+function second() {
+  // second() = callback()
+  console.log(3)
+  console.log(4)
+  console.log(5)
+}
+
+first(second) // ② first()の引数としてsecond()を入れる
+
+// 出力
+// 1
+// 2 （2秒後に出力）
+// 3 （2秒後に出力）
+// 4 （2秒後に出力）
+// 5 （2秒後に出力）
+```
+
+1 が出力された後、`setTimeout()で2秒後に2を出力するfirst()`という関数の引数として`3〜5を出力するsecond()`という関数を入れる。入れられた`second()`は`callback関数`として、`first()`の中の処理の一部となる。つまり、上記のように引数で受け取った`callback()`（中身は**second()**）を`setTimeout()`の中に入れれば、`console.log(2)`と同じように 2 秒後に`callback()`が実行される。
+
+なお、上記で`callback`と書いたが引数なので`callback`という名前である必要はない。
+
+以下のような書き方でも同じように動作するはずだ。
+
+```js
+// with callback
+console.log(1)
+
+function first(hoge) {
+  //callback => hoge
+  setTimeout(function () {
+    console.log(2)
+    hoge() //callback() => hoge()
+  }, 2000)
+}
+
+function second() {
+  console.log(3)
+  console.log(4)
+  console.log(5)
+}
+
+first(second)
+
+// 出力
+// 1
+// 2 （2秒後に出力）
+// 3 （2秒後に出力）
+// 4 （2秒後に出力）
+// 5 （2秒後に出力）
+```
+
+Tomoya
