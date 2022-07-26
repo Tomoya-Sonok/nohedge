@@ -7,3 +7,8 @@ TypeScript 製でマークダウン記法対応の[こちらのテンプレー�
 - [`remark`](https://github.com/remarkjs/remark)
 - [`remark-html`](https://github.com/remarkjs/remark-html)
 - [`gray-matter`](https://github.com/jonschlinkert/gray-matter)
+
+# TODO
+
+- プロフィール画面を 8 割は作る
+- 投稿する記事の整理、ブログ用メモの準備
