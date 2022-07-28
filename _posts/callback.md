@@ -152,4 +152,4 @@ first(second)
 // 5 （2秒後に出力）
 ```
 
-Tomoya
+Tomoya Sonok
