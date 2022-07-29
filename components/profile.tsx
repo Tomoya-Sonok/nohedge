@@ -15,10 +15,34 @@ const Profile = () => {
       <hr />
       <div className='md:flex py-4'>
         <p className='font-bold'>Account</p>
-        <ul>
-          <li>Twitter</li>
-          <li>Github</li>
-          <li>Wantedly</li>
+        <ul className='text-primary-text'>
+          <li>
+            <a
+              href='https://twitter.com/techguy10308'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://github.com/Tomoya-Sonok'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Github
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://www.wantedly.com/id/tomoya_sonokui'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Wantedly
+            </a>
+          </li>
         </ul>
       </div>
       <hr />
