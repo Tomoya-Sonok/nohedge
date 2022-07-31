@@ -48,7 +48,7 @@ const Header = () => {
       {openMenu ? (
         <div className='flex flex-row absolute z-10 top-0 right-0  min-h-fit min-w-full md:hidden'>
           <div className='basis-1/2'></div>
-          <div className={`animate-slideIn basis-1/2 pt-12 pb-12 bg-navmenu`}>
+          <div className='basis-1/2 py-14 bg-navmenu'>
             <button
               onClick={menuFunction}
               className='absolute top-5 right-5 md:hidden'
@@ -56,18 +56,18 @@ const Header = () => {
             >
               <XIcon className='h-7 w-7' />
             </button>
-            <ul className='text-primary-text text-center'>
-              <li className='my-2'>
+            <ul className='py-3 text-primary-text text-center'>
+              <li className='text-2xl my-2'>
                 <Link href='/'>
                   <a onClick={menuFunction}>Posts</a>
                 </Link>
               </li>
-              <li className='my-2'>
+              <li className='text-2xl my-2'>
                 <Link href='/'>
                   <a onClick={menuFunction}>Projects</a>
                 </Link>
               </li>
-              <li className='my-2'>
+              <li className='text-2xl my-2'>
                 <Link href='/about'>
                   <a onClick={menuFunction}>About</a>
                 </Link>
