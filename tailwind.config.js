@@ -15,6 +15,7 @@ module.exports = {
       white: '#ffffff',
       'primary-text': '#6e96ee',
       // 'primary-text': '#818CF8',
+      navmenu: '#323b4f',
     },
   },
   plugins: [require('@tailwindcss/typography')],
