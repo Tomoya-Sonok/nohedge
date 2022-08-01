@@ -62,11 +62,7 @@ const Header = () => {
                   <a onClick={menuFunction}>Posts</a>
                 </Link>
               </li>
-              <li className='text-2xl my-2'>
-                <Link href='/'>
-                  <a onClick={menuFunction}>Projects</a>
-                </Link>
-              </li>
+              <li className='text-2xl my-2'>Projects</li>
               <li className='text-2xl my-2'>
                 <Link href='/about'>
                   <a onClick={menuFunction}>About</a>
