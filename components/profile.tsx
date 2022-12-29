@@ -50,7 +50,7 @@ const Profile = () => {
         <div className='py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5'>
           <dt className='text-sm font-bold'>Job</dt>
           <dd className='text-lg space-y-3 sm:text-sm sm:space-y-1 sm:col-span-2'>
-            Front Engineer
+            フロントエンドエンジニア
           </dd>
         </div>
         <hr />
@@ -58,7 +58,7 @@ const Profile = () => {
           <dt className='text-sm font-bold'>About</dt>
           <dd className='text-lg space-y-3 sm:text-sm sm:space-y-1 sm:col-span-2'>
             IT未経験からSES企業に入社し、英語の通訳・翻訳業務やバックエンド領域の開発に従事。それから2年後、株式会社ニジボックスにフロントエンドエンジニアとして入社。「知識・知的好奇心に垣根をつくらない」をテーマに当ブログを開設。バックエンドはRuby
-            / Node.js、フロントエンドはReact ( TypeScript )が好き。
+            や Node.js、フロントエンドは TypeScript や Next.js が好き。
           </dd>
         </div>
       </dl>
