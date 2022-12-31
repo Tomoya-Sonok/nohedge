@@ -12,9 +12,8 @@ const Profile = () => {
           <span className='text-sm'>（ @techguy10308 ）</span>
         </p>
       </div>
-      <hr />
       <dl>
-        <div className='py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5'>
+        <div className='py-4 border-t sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5'>
           <dt className='text-sm font-bold mb-2'>Account</dt>
           <dd className='text-lg space-y-3 sm:text-sm sm:space-y-1 sm:col-span-2 text-primary-text mt-1'>
             <p>
@@ -46,15 +45,13 @@ const Profile = () => {
             </p>
           </dd>
         </div>
-        <hr />
-        <div className='py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5'>
+        <div className='py-4 border-t sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5'>
           <dt className='text-sm font-bold'>Job</dt>
           <dd className='text-lg space-y-3 sm:text-sm sm:space-y-1 sm:col-span-2'>
             フロントエンドエンジニア
           </dd>
         </div>
-        <hr />
-        <div className='py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5'>
+        <div className='py-4 border-t sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5'>
           <dt className='text-sm font-bold'>About</dt>
           <dd className='text-lg space-y-3 sm:text-sm sm:space-y-1 sm:col-span-2'>
             IT未経験からSES企業に入社し、英語の通訳・翻訳業務やバックエンド領域の開発に従事。それから2年後、株式会社ニジボックスにフロントエンドエンジニアとして入社。「知識・知的好奇心に垣根をつくらない」をテーマに当ブログを開設。バックエンドはRuby
